@@ -1,5 +1,10 @@
 /node_modules
 
-/dist
+# 项目生成的打包目录
+output
+dist
 
 package-lock.json
+
+# Mac
+.DS_Store
