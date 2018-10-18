@@ -10,7 +10,6 @@ function resolve (dir) { //因为自己改变了文件的路径，这里需要�
 module.exports = {
   entry: { //string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
     index: "./src/js/index.js",
-    about: "./src/js/about.js"
   },
   output: { //指示webpack如何去输出，以及在哪里输出你的「bundle、asset和其他你所打包或使用webpack载入的任何内容」。
     path: path.join(__dirname, "../dist/"), //目录对应一个绝对路径
@@ -106,7 +105,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: resolve("/dist/about.html"),
       template: "./src/about.html",
-      chunks: ["about"]
+      chunks: ["index"]
     }),
     new ExtractTextPlugin({ //从bundle中提取出
       filename: (getPath) => {
