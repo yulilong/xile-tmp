@@ -35,7 +35,7 @@ module.exports = {
       // },
       { // 处理js-es6的规则
         test: /\.js$/, //匹配资源，处理的文件的后缀名
-        exclude: path.join(__dirname, "node_modules"), //排除匹配的文件夹
+        exclude: path.join(__dirname, "../node_modules"), //排除匹配的文件夹
         use: { //每个入口（entry）指定使用一个loader，处理的加载器是loader
           loader: "babel-loader",
           query: {
