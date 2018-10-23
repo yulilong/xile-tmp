@@ -1,2 +1,58 @@
 
 @import './common.less';
+
+
+@banner-height: 400px;
+
+.banner-container {
+  overflow: hidden;
+  height: @banner-height;
+  .banner-wrap {
+    height: @banner-height;
+    position:relative;
+    transition: left 1s;
+    left: 0;
+    >div {
+      float: left;
+      width: 25%;
+      height: @banner-height;
+    }
+    .banner-img1 {
+      background-image: url('./../images/home/banner1.jpg');
+    }
+    .banner-img2 {
+      background-image: url('./../images/home/banner2.jpg');
+    }
+    .banner-img3 {
+      background-image: url('./../images/home/banner3.jpg');
+    }
+    .banner-img1, .banner-img2, .banner-img3 {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  // 轮播中的点
+  .banner-btn{
+    position:relative;
+    top:-54px;
+    text-align:center;
+    span{
+      display:inline-block;
+      position:relative;
+      z-index:100;
+      width:10px;
+      height:10px;
+      margin:0 10px;
+      border: 1px solid white;
+      border-radius:100%;
+      cursor: pointer;
+    }
+    .active {
+      width:20px;
+      background-color: #FFF;
+      border-radius: 8px;
+    }
+  }
+  
+}
