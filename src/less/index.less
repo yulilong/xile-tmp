@@ -4,6 +4,7 @@
 
 @banner-height: 400px;
 
+// 轮播
 .banner-container {
   overflow: hidden;
   height: @banner-height;
@@ -55,4 +56,96 @@
     }
   }
   
+}
+
+// 首页中间的logo文案描述
+.middle-line {
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  .middle-content {
+    width: @page-width;
+    margin: auto;
+    height: 200px;
+    // border: 1px solid;
+    &::before{
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    img {
+      // text-align: left;
+      width: 160px;
+      vertical-align: middle;
+    }
+    .test, .english{
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+      font-family: "Microsoft Yahei";
+      color: #000;
+      font-size: 20px;
+      line-height: 30px;
+      margin-left: 155px;
+    }
+    .english {
+      margin-left: 55px;
+      text-align: left;
+      padding: 20px;
+      border: 1px solid;
+      width: 150px;
+      position: relative;
+      &::before{
+        background-color: #FFF;
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        transform:rotate(45deg);
+        left: -11px;
+        top: 50% - 10px;
+      }
+    }
+    
+  }
+}
+
+// 工作流程
+.work-step {
+  width: @page-width;
+  margin: auto;
+  img {
+    width: @page-width;
+  }
+}
+
+// 脚部样式
+.footer {
+  width: @page-width;
+  margin: auto;
+  padding: 20px;
+  img {
+    width: 160px;
+  }
+  .address {
+    display: inline-block;
+    margin-left: 400px;
+    font-family: "Microsoft Yahei";
+    color: #999797;
+    line-height: 24px;
+  }
+}
+
+// 联系我们图片
+.contact-us {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 100;
+  img {
+    height: 70px;
+  }
 }
