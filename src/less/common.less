@@ -10,3 +10,118 @@ html,body{
 	margin: 0;
 	padding: 0;
 }
+
+// 头部样式
+.header {
+	width: 1000px;
+	margin: 0 auto;
+	height: 150px;
+	.left-font {
+		float: left;
+		h1 {
+			width: 390px;
+			font: 24px "Microsoft Yahei";
+			color: #000;
+			padding: 40px 0 0 0;
+			line-height: 24px;
+			font-weight: bold;
+			i {
+				display: block;
+				font-size: 16px;
+				em {
+					color: #e70012;
+					font-style: normal;
+				}
+			}
+		}
+  }
+  .logo {
+    display: inline-block;
+    margin-top: 17px;
+    width: 160px;
+    img {
+      width: 160px;
+    }
+  }
+  .right-font {
+    float: right;
+    // text-align: center;
+    &::before{
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    .test{
+      vertical-align: middle;
+      display: inline-block;
+      text-align: right;
+      font-family: "Microsoft Yahei";
+      color: #999797;
+      line-height: 24px;
+    }
+  }
+}
+
+// 导航菜单样式
+.navigation {
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  .nav-content {
+    width: 1000px;
+    height: 67px;
+    margin: auto;
+    text-align: center;
+    font-size: 0;
+    &::before{
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    // 每个菜单按钮
+    .menu{
+      vertical-align: middle;
+      display: inline-block;
+      font-family: "Microsoft Yahei";
+      text-decoration: none;  // 去下a标签下划线
+      font-size: 14px;
+      text-align: center;
+      color: #333;
+      line-height: 25px;
+      padding: 0 61px;
+      position: relative;
+      // border: 1px solid;
+      i {
+        font-size: 12px;
+        font-style: normal;
+        color: #888888;
+        text-transform: uppercase;
+      }
+    }
+    // 当前活动页、鼠标hover菜单
+    .active, .menu:hover {
+      font-weight: bold;
+      &::before {
+        border-top: 3px solid;
+        width: 100%;
+        content: '';
+        top: -11px;
+        left: 0;
+        position: absolute;
+      }
+      &::after {
+        border-top: 5px solid;
+        border-left: 5px solid #FFF;
+        border-right: 5px solid #FFF;
+        // width: 5px;
+        content: '';
+        top: -8px;
+        left: 50% - 2px;
+        position: absolute;
+      }
+    }
+    
+  }
+  
+}
