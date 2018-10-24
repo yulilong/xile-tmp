@@ -65,8 +65,9 @@
   .middle-content {
     width: @page-width;
     margin: auto;
-    height: 200px;
+    height: 300px;
     // border: 1px solid;
+    text-align: center;
     &::before{
       content: '';
       display: inline-block;
@@ -74,11 +75,10 @@
       vertical-align: middle;
     }
     img {
-      // text-align: left;
       width: 160px;
       vertical-align: middle;
     }
-    .test, .english{
+    .test{
       vertical-align: middle;
       display: inline-block;
       text-align: center;
@@ -86,28 +86,13 @@
       color: #000;
       font-size: 20px;
       line-height: 30px;
-      margin-left: 155px;
-    }
-    .english {
-      margin-left: 55px;
-      text-align: left;
-      padding: 20px;
-      border: 1px solid;
-      width: 150px;
-      position: relative;
-      &::before{
-        background-color: #FFF;
-        border-bottom: 1px solid;
-        border-left: 1px solid;
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        transform:rotate(45deg);
-        left: -11px;
-        top: 50% - 10px;
+      img {
+        height: 290px;
+        width: inherit;
       }
+    }
+    .right-logo {
+      margin-left: 190px;
     }
     
   }
@@ -139,7 +124,45 @@
   }
 }
 
-// 联系我们图片
+// 合作伙伴
+.cooperative {
+  width: @page-width;
+  margin: auto;
+  height: 200px;
+  // border: 1px solid;
+  .arrow-left, .arrow-right {
+    width: 28px;
+    height: 129px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .arrow-left {
+    background-image: url('./../images/home/left.png');
+  }
+  .arrow-right {
+    background-image: url('./../images/home/right.png');
+  }
+  .cooperative-content {
+    height: 131px;
+    width: 930px;
+    border: 1px solid red;
+    display: inline-block;
+    // overflow: hidden;
+    overflow: auto;
+    > div {
+      // width: 300%;
+      width: 1800px;
+      img {
+        height: 129px;
+        box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+// 页面中间右边电话联系我们图片
 .contact-us {
   position: fixed;
   right: 0;

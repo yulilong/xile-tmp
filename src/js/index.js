@@ -8,17 +8,18 @@ var button = document.querySelectorAll('.banner-btn span');
 var browerWidth = getClientWidth(); // 获取浏览器窗口宽度
 var wrapWidth = browerWidth*3;     // 轮播容器宽度   3个图片
 bannerWrap.style.width = browerWidth*4 + 'px';// banner容器宽度
-bannerWrap.style.left = '0px'; // 第一次赋值
+bannerWrap.style.left = '0px';  // 第一次赋值
+var moveTime = 5000;            // 设置多久移动一次
 ////////////////
 
-window.timer = setInterval(move, 3000);
+window.timer = setInterval(move, moveTime);
 addHeaderOnResize();
 for (var i = 0; i < button.length; i++) {
   button[i].onclick = function () {
     bannerWrap.style.left = -browerWidth * this.getAttribute('data-index') + 'px';
     tog(this.getAttribute('data-index'))
     clearInterval(window.timer);
-    window.timer = setInterval(move, 3000);
+    window.timer = setInterval(move, moveTime);
   };
 }
 
