@@ -100,6 +100,7 @@ module.exports = {
     new HtmlWebpackPlugin({ //简化了html文件的创建，以便为webpack包提供服务。
       filename: resolve("/dist/index.html"), //处理dirname路径的问题 ，这里等同于'../dist/index.html'
       template: "./src/index.html",
+      favicon: "./src/icon.png",
       chunks: ["index"] //选择加载的css和js,模块名对应上面entry接口的名称
     }),
     new HtmlWebpackPlugin({

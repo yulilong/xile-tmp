@@ -109,27 +109,36 @@
 
 // 脚部样式
 .footer {
-  width: @page-width;
-  margin: auto;
-  padding: 20px;
-  img {
-    width: 160px;
+  background-color: #1c1c1c;
+  > div {
+    width: @page-width;
+    margin: auto;
+    padding: 20px;
+    img {
+      width: 160px;
+      vertical-align: middle;
+    }
+    .address {
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 150px;
+      font-family: "Microsoft Yahei";
+      color: #999797;
+      line-height: 24px;
+    }
+    .qr {
+      width: 150px;
+      margin-left: 140px;
+    }
   }
-  .address {
-    display: inline-block;
-    margin-left: 400px;
-    font-family: "Microsoft Yahei";
-    color: #999797;
-    line-height: 24px;
-  }
+  
 }
 
 // 合作伙伴
 .cooperative {
-  width: @page-width;
+  width: @page-width + 200px;
   margin: auto;
-  height: 200px;
-  // border: 1px solid;
+  font-size: 0;   // 解决内联元素间隙
   .arrow-left, .arrow-right {
     width: 28px;
     height: 129px;
@@ -137,6 +146,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    vertical-align: middle;
   }
   .arrow-left {
     background-image: url('./../images/home/left.png');
@@ -145,19 +155,28 @@
     background-image: url('./../images/home/right.png');
   }
   .cooperative-content {
-    height: 131px;
-    width: 930px;
-    border: 1px solid red;
+    vertical-align: middle;
+    width: 1128px;
     display: inline-block;
-    // overflow: hidden;
-    overflow: auto;
-    > div {
-      // width: 300%;
-      width: 1800px;
-      img {
-        height: 129px;
-        box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    .content-show {
+      width: 6000px;
+      font-size: 0;                   // 去掉内联元素间间隙 
+      -webkit-text-size-adjust:none;  // 兼容谷歌最小字體限制
+      // 用于移动动画
+      position:relative;
+      left: 282px;
+      transition: left 1s;
+      > div {
+        display: inline-block;
+        padding: 10px;
+        img {
+          height: 129px;
+          width: 262px;
+          box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1);
+        }
       }
+      
     }
   }
 }
