@@ -8,6 +8,7 @@
 .banner-container {
   overflow: hidden;
   height: @banner-height;
+  min-width: @page-width;
   .banner-wrap {
     height: @banner-height;
     position:relative;
@@ -62,6 +63,7 @@
 .middle-line {
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
+  min-width: @page-width;
   .middle-content {
     width: @page-width;
     margin: auto;
@@ -107,36 +109,10 @@
   }
 }
 
-// 脚部样式
-.footer {
-  background-color: #1c1c1c;
-  > div {
-    width: @page-width;
-    margin: auto;
-    padding: 20px;
-    img {
-      width: 160px;
-      vertical-align: middle;
-    }
-    .address {
-      vertical-align: middle;
-      display: inline-block;
-      margin-left: 150px;
-      font-family: "Microsoft Yahei";
-      color: #999797;
-      line-height: 24px;
-    }
-    .qr {
-      width: 150px;
-      margin-left: 140px;
-    }
-  }
-  
-}
 
 // 合作伙伴
 .cooperative {
-  width: @page-width + 200px;
+  width: @page-width;
   margin: auto;
   font-size: 0;   // 解决内联元素间隙
   .arrow-left, .arrow-right {

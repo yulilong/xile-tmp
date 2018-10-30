@@ -1,5 +1,5 @@
 
-@page-width: 1000px;
+@page-width: 1200px;
 
 html, body{
 	width: 100%;
@@ -16,9 +16,11 @@ html,body{
 
 // 头部样式
 .header {
-	width: @page-width;
+  width: @page-width;
+  min-width: @page-width;
 	margin: 0 auto;
-	height: 150px;
+  height: 150px;
+  position: relative;
 	.left-font {
 		float: left;
 		h1 {
@@ -39,11 +41,22 @@ html,body{
 		}
   }
   .logo {
-    display: inline-block;
-    margin-top: 17px;
-    width: 160px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    
     img {
       width: 160px;
+      vertical-align: middle;
     }
   }
   .right-font {
@@ -73,6 +86,7 @@ html,body{
 .navigation {
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
+  min-width: @page-width;
   .nav-content {
     width: @page-width;
     height: 67px;
@@ -130,4 +144,43 @@ html,body{
     
   }
   
+}
+
+// 脚部样式
+.footer {
+  background-color: #1c1c1c;
+  min-width: @page-width;
+  
+  > div {
+    width: @page-width;
+    margin: auto;
+    padding: 20px 0;
+    position: relative;
+    img {
+      width: 160px;
+      vertical-align: middle;
+    }
+    .address {
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 160px;
+      font-family: "Microsoft Yahei";
+      color: #999797;
+      line-height: 24px;
+    }
+    .qr {
+      position: absolute;
+      height: 150px;
+      right: 0;
+      top: 5px;
+
+    }
+  }
+  
+}
+
+// 分隔线
+.trennlinie {
+  border-top: 1px solid #f1f1f1;
+  min-width: @page-width;
 }
