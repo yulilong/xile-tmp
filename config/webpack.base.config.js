@@ -10,6 +10,7 @@ function resolve (dir) { //因为自己改变了文件的路径，这里需要�
 module.exports = {
   entry: { //string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
     index: "./src/js/index.js",
+    partner: "./src/js/partner.js",
   },
   output: { //指示webpack如何去输出，以及在哪里输出你的「bundle、asset和其他你所打包或使用webpack载入的任何内容」。
     path: path.join(__dirname, "../dist/"), //目录对应一个绝对路径
@@ -102,6 +103,12 @@ module.exports = {
       template: "./src/index.html",
       favicon: "./src/icon.png",
       chunks: ["index"] //选择加载的css和js,模块名对应上面entry接口的名称
+    }),
+    new HtmlWebpackPlugin({ //简化了html文件的创建，以便为webpack包提供服务。
+      filename: resolve("/dist/partner.html"), //处理dirname路径的问题 ，这里等同于'../dist/index.html'
+      template: "./src/partner.html",
+      favicon: "./src/icon.png",
+      chunks: ["partner"] //选择加载的css和js,模块名对应上面entry接口的名称
     }),
     new HtmlWebpackPlugin({
       filename: resolve("/dist/about.html"),
