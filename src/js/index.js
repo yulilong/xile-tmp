@@ -7,6 +7,11 @@ require("./cooperative.js")
 var bannerWrap = document.getElementsByClassName('banner-wrap')[0];
 var button = document.querySelectorAll('.banner-btn span');
 var browerWidth = getClientWidth(); // 获取浏览器窗口宽度
+var minWidth = 1200;                // 页面最小宽度
+// 如果浏览器宽度小于页面最小宽度，那么轮播宽度则设置为页面最小宽度
+if (browerWidth < minWidth) {
+  browerWidth = minWidth;
+}
 var wrapWidth = browerWidth*3;     // 轮播容器宽度   3个图片
 bannerWrap.style.width = browerWidth*4 + 'px';// banner容器宽度
 bannerWrap.style.left = '0px';  // 第一次赋值
@@ -28,8 +33,13 @@ function tog(index) {
 function setWidth() {
   var width = browerWidth;
   browerWidth = getClientWidth();
+  // 如果浏览器宽度小于页面最小宽度，那么轮播宽度则设置为页面最小宽度
+  if (browerWidth < minWidth) {
+    browerWidth = minWidth;
+  }
   wrapWidth = browerWidth*3;
   bannerWrap.style.width = browerWidth*4 + 'px';// banner容器宽度
+  
   if (width !== 0) {
     // 调整轮播偏移量
     var count = parseInt(bannerWrap.style.left)/ width;
@@ -40,7 +50,11 @@ function setWidth() {
 function addHeaderOnResize() {
   // 浏览器大小发生变化:事件绑定， 重置轮播的大小
   window.onresize = function () {
-    setWidth();
+    var width = getClientWidth();
+      // 只有宽度大于1200px才设置
+      if(width >= 1200) {
+        setWidth();
+      }
   };
 }
 function move() {
