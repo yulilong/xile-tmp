@@ -1,1 +1,33 @@
 @import './common.less';
+
+// 一张banner图片
+.banner-img {
+  min-width: @page-width;
+  width: @page-width;
+  margin: 0 auto;
+  img {
+    width:@page-width;
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .line {
+    height: 40px;
+  }
+}
+
+// 合作伙伴文字样式
+.partner-text {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  min-width: @page-width;
+  padding: 5px 0;
+}
+.partner-line {
+  min-width: @page-width;
+  width: @page-width;
+  margin: 10px auto;
+  border-top:  1px solid #adadad;
+  position: relative;
+}

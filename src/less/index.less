@@ -1,8 +1,8 @@
 
 @import './common.less';
 
-
-@banner-height: 400px;
+// 轮播图片高度
+@banner-height: 550px;
 
 // 轮播
 .banner-container {
@@ -110,52 +110,6 @@
 }
 
 
-// 合作伙伴
-.cooperative {
-  width: @page-width;
-  margin: auto;
-  font-size: 0;   // 解决内联元素间隙
-  .arrow-left, .arrow-right {
-    width: 28px;
-    height: 129px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    vertical-align: middle;
-  }
-  .arrow-left {
-    background-image: url('./../images/home/left.png');
-  }
-  .arrow-right {
-    background-image: url('./../images/home/right.png');
-  }
-  .cooperative-content {
-    vertical-align: middle;
-    width: 1128px;
-    display: inline-block;
-    overflow: hidden;
-    .content-show {
-      width: 6000px;
-      font-size: 0;                   // 去掉内联元素间间隙 
-      -webkit-text-size-adjust:none;  // 兼容谷歌最小字體限制
-      // 用于移动动画
-      position:relative;
-      left: 282px;
-      transition: left 1s;
-      > div {
-        display: inline-block;
-        padding: 10px;
-        img {
-          height: 129px;
-          width: 262px;
-          box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1);
-        }
-      }
-      
-    }
-  }
-}
 
 // 页面中间右边电话联系我们图片
 .contact-us {
