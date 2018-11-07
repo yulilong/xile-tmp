@@ -7,6 +7,7 @@
     min-width: @page-width;
     width: @page-width;
     margin: 0 auto;
+    display: none;
     // 每一个案例
     .case-item {
       border-bottom: 1px dotted #8B8B8B;
@@ -55,6 +56,23 @@
           padding: 3px 10px;
         }
       }
+    }
+  }
+
+  // 每个案例
+  .dipingxian, .fute, .guoji, .jiashi, .qinghua {
+    min-width: @page-width;
+    width: @page-width;
+    margin: 0 auto;
+    display: none;
+    .title {
+      padding: 15px 0;
+      color: #E20023;
+      font-family: 宋体;
+    }
+    img {
+      padding: 20px 0;
+      width: @page-width;
     }
   }
 }
