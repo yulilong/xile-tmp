@@ -11,8 +11,6 @@ function getQueryString(name) {
 }
 
 var item = getQueryString('item');
-console.log('ddddd:', item);
-console.log('typeof:', typeof item);
 
 var caseList = document.querySelector('.case-list');
 var diPingXian = document.querySelector('.dipingxian');

@@ -12,6 +12,8 @@ module.exports = {
     index: "./src/js/index.js",
     partner: "./src/js/partner.js",
     case: "./src/js/case.js",
+    video: "./src/js/video.js",
+    contact: "./src/js/contact.js",
   },
   output: { //指示webpack如何去输出，以及在哪里输出你的「bundle、asset和其他你所打包或使用webpack载入的任何内容」。
     path: path.join(__dirname, "../dist/"), //目录对应一个绝对路径
@@ -118,6 +120,20 @@ module.exports = {
       template: "./src/case.html",
       favicon: "./src/icon.png",
       chunks: ["case"] 
+    }),
+    // 宣传片
+    new HtmlWebpackPlugin({ 
+      filename: resolve("/dist/video.html"), 
+      template: "./src/video.html",
+      favicon: "./src/icon.png",
+      chunks: ["video"] 
+    }),
+    // 宣传片
+    new HtmlWebpackPlugin({ 
+      filename: resolve("/dist/contact.html"), 
+      template: "./src/contact.html",
+      favicon: "./src/icon.png",
+      chunks: ["contact"] 
     }),
     new HtmlWebpackPlugin({
       filename: resolve("/dist/about.html"),
