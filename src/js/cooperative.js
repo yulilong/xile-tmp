@@ -12,7 +12,6 @@ var totalWidth = picWidth*picTotal;     // 轮播容器宽度   14个图片每�
 var moveTime2 = 4000;            // 设置多久移动一次
 var origin = -picWidth + 'px'
 contentShow.style.left = origin;  // 第一次赋值, 解决第一次 .left没有值问题
-console.log('contentShow.style.left: ', contentShow.style.left);
 // 点击左边按钮
 window.clickLeft = function (e) {
   clearInterval(window.time2);
