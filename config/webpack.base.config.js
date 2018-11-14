@@ -2,8 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require("webpack");
+var CopyWebpackPlugin = require("copy-webpack-plugin"); // 复制静态资源到打包目录
 
-function resolve (dir) { //因为自己改变了文件的路径，这里需要重新处理一下
+function resolve(dir) { //因为自己改变了文件的路径，这里需要重新处理一下
   return path.join(__dirname, "..", dir);
 }
 
@@ -108,32 +109,32 @@ module.exports = {
       chunks: ["index"] //选择加载的css和js,模块名对应上面entry接口的名称
     }),
     // 合作伙伴
-    new HtmlWebpackPlugin({ 
-      filename: resolve("/dist/partner.html"), 
+    new HtmlWebpackPlugin({
+      filename: resolve("/dist/partner.html"),
       template: "./src/partner.html",
       favicon: "./src/icon.png",
       chunks: ["partner"]
     }),
     // 活动案例页面
-    new HtmlWebpackPlugin({ 
-      filename: resolve("/dist/case.html"), 
+    new HtmlWebpackPlugin({
+      filename: resolve("/dist/case.html"),
       template: "./src/case.html",
       favicon: "./src/icon.png",
-      chunks: ["case"] 
+      chunks: ["case"]
     }),
     // 宣传片
-    new HtmlWebpackPlugin({ 
-      filename: resolve("/dist/video.html"), 
+    new HtmlWebpackPlugin({
+      filename: resolve("/dist/video.html"),
       template: "./src/video.html",
       favicon: "./src/icon.png",
-      chunks: ["video"] 
+      chunks: ["video"]
     }),
     // 宣传片
-    new HtmlWebpackPlugin({ 
-      filename: resolve("/dist/contact.html"), 
+    new HtmlWebpackPlugin({
+      filename: resolve("/dist/contact.html"),
       template: "./src/contact.html",
       favicon: "./src/icon.png",
-      chunks: ["contact"] 
+      chunks: ["contact"]
     }),
     new HtmlWebpackPlugin({
       filename: resolve("/dist/about.html"),
@@ -147,6 +148,10 @@ module.exports = {
       disable: false, //禁用插件为false
       // allChunks:true
     }),
+    new CopyWebpackPlugin([{
+      from: resolve("./src/static"),
+      to: resolve("./dist/static"),
+    }]),
     //new ExtractTextPlugin('css/[name].css')
     // 添加jquery，已经install jquery，然后可以直接全局用了
     new webpack.ProvidePlugin({
